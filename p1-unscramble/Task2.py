@@ -20,16 +20,25 @@ Print a message:
 September 2016.".
 """
 
-# Find the longest time
-call_index = 0
-total_time = 0
+# Create the total time for every number
+total_times = {}
 for i in range(len(calls)):
     t = int(calls[i][3])
-    
-    if t > total_time:
-        total_time = t
-        call_index = i 
+    caller_number = calls[i][0]
+    receiver_number = calls[i][1]
 
-longest_time_number = calls[call_index][0]
+    if caller_number in total_times:
+        total_times[caller_number] += t
+    else:
+        total_times[caller_number] = t
 
-print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(longest_time_number, total_time))
+    if receiver_number in total_times:
+        total_times[receiver_number] += t
+    else:
+        total_times[receiver_number] = t
+
+# Find the longest time
+longest_time_number = max(total_times, key=total_times.get)
+longest_total_time = total_times[longest_time_number]
+
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(longest_time_number, longest_total_time))
