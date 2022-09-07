@@ -1,0 +1,66 @@
+Run time analysis and Big O
+
+All the tasks require the loops for reading the data, so we will not
+repeat that analysis. For every line in the data files, we read from
+disk and add to a list, so the number of lines is proportional to the
+lines in the data files and so the Big O of this part of the code is
+O(n).
+
+
+Task 0
+
+In this task there are no loops, only a couple of lines to print the
+first and the last item of the lists, so it's complexity is constant,
+O(1).
+
+Task 1
+
+In this task we use a couple of loops that run over both csv files. A
+simple loop is in direct proportion to the size of the input and has
+linear time, O(n).
+
+In this tasks, a new data container is generated, with all the
+telephone numbers in the other containers. As in both csv we have
+telephone numbers in two columns, it seems that the space efficiency is
+O(4n). In terms of space complexity we have 6n.
+
+
+Task 2
+
+In this task we use a single loop so again the time is linear and
+proportional to the input, O(n).
+
+The don't create any new data structure, just 3 integer variables. No
+need to analyze the space complexity.
+
+
+Task 3
+
+In this task, the algorithm needs more conditionals but all of them
+also inside a single loop so the time is again linear, O(n) but as I 
+use the sort method of lists on the resultant list, the worst case 
+scenery is O(n log n).
+
+A new data structure is generated, a Python list of strings which
+depends on the data. A worst case is that all calls are from Bangalore
+with the code "(080)" so the new list will have the same number of
+members than the original and the best case, in terms of space
+efficiency, is if no call has the code "(080)". 
+
+
+Task 4
+
+In this task we create three new lists and use simple loops over both
+texts and calls, so again, the complexity is O(n) but  but I also
+use the sort method of lists on the resultant list, so the worst case 
+scenery is O(n log n).
+
+In space efficiency, the two new structures would have the double of
+length than the originals, since we use data from two columns, but we
+are avoiding repetitions (actually we use Python sets instead of
+lists) so the length are smaller. The third new list is conditional,
+so the worst case in space terms, is when all data is true to the
+condition, in which case the length of the telemarketers list will be
+the same of the outgoing numbers list and the best case is if none is
+true, so the length will be zero.
+
